@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @individual.category %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @individual.notes %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @individual.user %>
+</p>
+
+<%= link_to 'Edit', edit_individual_path(@individual) %> |
+<%= link_to 'Back', individuals_path %>
