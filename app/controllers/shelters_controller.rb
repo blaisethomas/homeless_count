@@ -29,6 +29,7 @@ class SheltersController < ApplicationController
   # POST /shelters.json
   def create
     @shelter = Shelter.new(shelter_params)
+    @shelter.user = current_user
 
     respond_to do |format|
       if @shelter.save
