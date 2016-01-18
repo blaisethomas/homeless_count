@@ -2,7 +2,7 @@
   <div class="form-group">
     <%= f.label :category, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.text_field :category, :class => 'text-field form-control' %>
+      <%= f.select :category, options_for_select([["Select One", ""], "Individual Adult", "Unaccompanied Male Youth", "Unaccompanied Female Youth", "Unaccompanied Youth, Unknown Gender"]), :class => "col-md-10 form-control"  %>
     </div>
   </div>
   <div class="form-group">
@@ -16,7 +16,7 @@
     <div class='col-md-offset-2 col-md-10'>
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                  individuals_path, :class => 'btn btn-default' %>
+                  count_index_path, :class => 'btn btn-default' %>
     </div>
   </div>
 <% end %>

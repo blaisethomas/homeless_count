@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root 'welcome#home'
+
+  get "count" => "welcome#index", as: :count_index
+
   resources :families
 
   resources :individuals

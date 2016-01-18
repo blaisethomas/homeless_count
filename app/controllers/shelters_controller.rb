@@ -33,10 +33,10 @@ class SheltersController < ApplicationController
 
     respond_to do |format|
       if @shelter.save
-        format.html { redirect_to @shelter, notice: 'Shelter was successfully created.' }
+        format.html { redirect_to count_index_path, notice: 'Shelter was successfully created.' }
         format.json { render :show, status: :created, location: @shelter }
       else
-        format.html { render :new }
+        format.html { render count_index_path }
         format.json { render json: @shelter.errors, status: :unprocessable_entity }
       end
     end

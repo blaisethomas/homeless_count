@@ -33,10 +33,10 @@ class IndividualsController < ApplicationController
 
     respond_to do |format|
       if @individual.save
-        format.html { redirect_to @individual, notice: 'Individual was successfully created.' }
+        format.html { redirect_to count_index_path, notice: 'Individual was successfully created.' }
         format.json { render :show, status: :created, location: @individual }
       else
-        format.html { render :new }
+        format.html { render count_index_path }
         format.json { render json: @individual.errors, status: :unprocessable_entity }
       end
     end

@@ -33,10 +33,10 @@ class FamiliesController < ApplicationController
 
     respond_to do |format|
       if @family.save
-        format.html { redirect_to @family, notice: 'Family was successfully created.' }
+        format.html { redirect_to count_index_path, notice: 'Family was successfully created.' }
         format.json { render :show, status: :created, location: @family }
       else
-        format.html { render :new }
+        format.html { render count_index_path }
         format.json { render json: @family.errors, status: :unprocessable_entity }
       end
     end

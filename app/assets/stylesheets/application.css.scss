@@ -35,3 +35,16 @@
 .form-user {
   max-width: 450px;
 }
+
+.navbar {
+	background-color: $brand-primary;
+	.navbar-brand{
+		color: white;
+	}
+
+	
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: white;
+}

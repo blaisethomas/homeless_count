@@ -2,25 +2,26 @@
   <div class="form-group">
     <%= f.label :adults, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.number_field :adults, :class => 'text-field form-control' %>
+      <%= f.select :adults, options_for_select([["Select One", ""], "1", "2", "3", "4", "5"]), :class => "col-md-10 form-control"  %>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :under18male, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.number_field :under18male, :class => 'text-field form-control' %>
+      <%#= f.number_field :under18male, :class => 'text-field form-control' %>
+      <%= f.select :under18male, options_for_select([["Select One", ""], "1", "2", "3", "4", "5"]), :class => "col-md-10 form-control"  %>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :under18female, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.number_field :under18female, :class => 'text-field form-control' %>
+      <%= f.select :under18female, options_for_select([["Select One", ""], "1", "2", "3", "4", "5"]), :class => "col-md-10 form-control"  %>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :under18genderunknown, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.number_field :under18genderunknown, :class => 'text-field form-control' %>
+      <%= f.select :under18genderunknown, options_for_select([["Select One", ""], "1", "2", "3", "4", "5"]), :class => "col-md-10 form-control"  %>
     </div>
   </div>
   <div class="form-group">
@@ -34,7 +35,7 @@
     <div class='col-md-offset-2 col-md-10'>
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                  families_path, :class => 'btn btn-default' %>
+                  count_index_path, :class => 'btn btn-default' %>
     </div>
   </div>
 <% end %>

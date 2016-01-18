@@ -1,6 +1,13 @@
-<%- model_class = Individual -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => Individual %></h1>
-</div>
-<%= render :partial => 'form' %>
+<% if current_user %> 
 
+	<%- model_class = Individual -%>
+	<div class="page-header">
+	  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => Individual %></h1>
+	</div>
+	<%= render :partial => 'form' %>
+
+<% else %>
+
+	<%= link_to 'Please log in', user_session_path %>
+
+<% end %>
