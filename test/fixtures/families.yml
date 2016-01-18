@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  adults: 1
+  under18male: 1
+  under18female: 1
+  under18genderunknown: 1
+  notes: MyText
+  user_id: 
+
+two:
+  adults: 1
+  under18male: 1
+  under18female: 1
+  under18genderunknown: 1
+  notes: MyText
+  user_id: 
