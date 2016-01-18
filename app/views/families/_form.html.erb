@@ -6,20 +6,20 @@
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :under18male, :class => 'control-label col-md-2' %>
+    <%= f.label "Under 18 Male", :class => 'control-label col-md-2' %>
     <div class="col-md-10">
       <%#= f.number_field :under18male, :class => 'text-field form-control' %>
       <%= f.select :under18male, options_for_select([["Select One", ""], "1", "2", "3", "4", "5"]), :class => "col-md-10 form-control"  %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :under18female, :class => 'control-label col-md-2' %>
+    <%= f.label "Under 18 Female", :class => 'control-label col-md-2' %>
     <div class="col-md-10">
       <%= f.select :under18female, options_for_select([["Select One", ""], "1", "2", "3", "4", "5"]), :class => "col-md-10 form-control"  %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :under18genderunknown, :class => 'control-label col-md-2' %>
+    <%= f.label "Under 18 Gender Unknown", :class => 'control-label col-md-2' %>
     <div class="col-md-10">
       <%= f.select :under18genderunknown, options_for_select([["Select One", ""], "1", "2", "3", "4", "5"]), :class => "col-md-10 form-control"  %>
     </div>
