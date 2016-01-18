@@ -1,34 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Family -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Family %></h1>
+</div>
 
-<p>
-  <strong>Adults:</strong>
-  <%= @family.adults %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:adults) %></dt>
+      <dd><pre class="prettyprint"><%= @family.adults %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:under18male) %></dt>
+      <dd><pre class="prettyprint"><%= @family.under18male %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:under18female) %></dt>
+      <dd><pre class="prettyprint"><%= @family.under18female %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:under18genderunknown) %></dt>
+      <dd><pre class="prettyprint"><%= @family.under18genderunknown %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:notes) %></dt>
+      <dd><pre class="prettyprint"><%= @family.notes %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Under18male:</strong>
-  <%= @family.under18male %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              families_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_family_path(@family), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              family_path(@family),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Under18female:</strong>
-  <%= @family.under18female %>
-</p>
-
-<p>
-  <strong>Under18genderunknown:</strong>
-  <%= @family.under18genderunknown %>
-</p>
-
-<p>
-  <strong>Notes:</strong>
-  <%= @family.notes %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @family.user %>
-</p>
-
-<%= link_to 'Edit', edit_family_path(@family) %> |
-<%= link_to 'Back', families_path %>

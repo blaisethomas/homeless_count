@@ -1,35 +1,44 @@
-<h1>Listing families</h1>
-
-<table>
+<%- model_class = Family -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Family %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Adults</th>
-      <th>Under18male</th>
-      <th>Under18female</th>
-      <th>Under18genderunknown</th>
-      <th>Notes</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:adults) %></th>
+      <th><%= model_class.human_attribute_name(:under18male) %></th>
+      <th><%= model_class.human_attribute_name(:under18female) %></th>
+      <th><%= model_class.human_attribute_name(:under18genderunknown) %></th>
+      <th><%= model_class.human_attribute_name(:notes) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @families.each do |family| %>
       <tr>
+        <td><%= family.id %></td>
         <td><%= family.adults %></td>
         <td><%= family.under18male %></td>
         <td><%= family.under18female %></td>
         <td><%= family.under18genderunknown %></td>
         <td><%= family.notes %></td>
-        <td><%= family.user %></td>
-        <td><%= link_to 'Show', family %></td>
-        <td><%= link_to 'Edit', edit_family_path(family) %></td>
-        <td><%= link_to 'Destroy', family, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l family.created_at, format: :long %></td>
+        <td>
+          <%= link_to family_path(family), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to family_path(family), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Family', new_family_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_family_path,
+            :class => 'btn btn-primary' %>
