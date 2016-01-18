@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
         :recoverable, :rememberable, :trackable, :validatable
   has_many :families
   has_many :individuals
+  has_many :shelters
 end
