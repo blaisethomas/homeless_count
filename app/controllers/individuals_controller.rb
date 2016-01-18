@@ -29,6 +29,7 @@ class IndividualsController < ApplicationController
   # POST /individuals.json
   def create
     @individual = Individual.new(individual_params)
+    @individual.user = current_user
 
     respond_to do |format|
       if @individual.save
