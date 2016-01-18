@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :families
+
   resources :individuals
 
   resources :shelters

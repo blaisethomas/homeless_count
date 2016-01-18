@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Adults:</strong>
+  <%= @family.adults %>
+</p>
+
+<p>
+  <strong>Under18male:</strong>
+  <%= @family.under18male %>
+</p>
+
+<p>
+  <strong>Under18female:</strong>
+  <%= @family.under18female %>
+</p>
+
+<p>
+  <strong>Under18genderunknown:</strong>
+  <%= @family.under18genderunknown %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @family.notes %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @family.user %>
+</p>
+
+<%= link_to 'Edit', edit_family_path(@family) %> |
+<%= link_to 'Back', families_path %>

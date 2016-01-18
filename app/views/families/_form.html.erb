@@ -1,0 +1,16 @@
+<%= simple_form_for(@family) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :adults %>
+    <%= f.input :under18male %>
+    <%= f.input :under18female %>
+    <%= f.input :under18genderunknown %>
+    <%= f.input :notes %>
+    <%= f.association :user %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
